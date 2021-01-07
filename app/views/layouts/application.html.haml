@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Todoapp
     = csrf_meta_tags
@@ -11,7 +12,7 @@
     %header.header
       .header_logos
         %p.header_pageTitle BlogApp
-      %header_line.line
+      .line
     %p.notice= notice
     %p.alert= alert
     = yield
