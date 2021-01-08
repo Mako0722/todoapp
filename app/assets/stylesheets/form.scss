@@ -16,6 +16,7 @@ label {
   // height: 25px;
   // left: 26px;
   // top: 161px;
+  white-space: nowrap;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -26,12 +27,13 @@ label {
 
 
 textarea {
+  margin:8px 26px 26px 26px;
   width: 100%;
-  margin: 8px 0px;
-  padding: 8px 8px;
-  min-height: 440px;
-  resize: vertical;
-  border: 1px solid #EBEBEB;
+  height: 203px;
+  left: 26px;
+  top: 296px;
+  background: #F4F4F4;
+  border-radius: 10px;
 }
 
 h2{
@@ -62,4 +64,19 @@ h2{
   font-size: 18px;
   line-height: 25px;
   border-color: #F4F4F4;
+}
+
+.top-titile {
+  height: 36px;
+  width:136px;
+  left: 0%;
+  right: 0%;
+  top: calc(50% - 36px/2);
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+  /* identical to box height */
+  color: #000000;
 }

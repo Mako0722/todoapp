@@ -3,7 +3,7 @@
   %head
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Todoapp
+    %title BlogApp
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -11,8 +11,10 @@
   %body
     %header.header
       .header_logos
-        %p.header_pageTitle BlogApp
-      .line
+        %p.header_pageTitle 
+          = link_to 'BlogApp', root_path
+        .dropdown
+          = image_tag 'Oval.svg', class: 'header_avatar dropbtn'
     %p.notice= notice
     %p.alert= alert
     = yield
