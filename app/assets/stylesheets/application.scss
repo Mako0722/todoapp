@@ -1,6 +1,12 @@
 @import 'reset';
 @import 'header';
 @import 'form';
+@import 'variables';
+@import 'buttons';
+@import 'card';
+@import 'common';
+@import 'article';
+
 
 
 html {
@@ -27,6 +33,7 @@ body {
 
 a {
   text-decoration: none;
+  color: $text-base-color;
 }
 
 .container {
@@ -45,15 +52,15 @@ a {
 }
 
 .float_btn {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  width: 64px;
-  height: 64px;
-  border-radius: 100%;
+  width: 100%;
+  height: 160px;
+  left: 30px;
+  top: 348px;
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   text-align: center;
-  color: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 68px 109.5px ;
 
   i {
     margin-top: 22px;

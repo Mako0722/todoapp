@@ -8,13 +8,16 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    %header.header
-      .header_logos
-        %p.header_pageTitle 
-          = link_to 'BlogApp', root_path
+
+    %body
+      %header.header
+        %p.header_pageTitle BlogApp
         .dropdown
           = image_tag 'Oval.svg', class: 'header_avatar dropbtn'
+          .dropdown-content
+            %a{:href => "#"} プロフィール
+            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+            = link_to 'ログイン', new_user_session_path
     %p.notice= notice
     %p.alert= alert
     = yield

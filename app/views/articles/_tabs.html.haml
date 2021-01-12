@@ -1,5 +1,15 @@
-.tabs
-  .tabs_item.active
-    新着記事一覧
-  .tabs_item
-    タイムライン
+.container
+.top-title New Board
+- @articles.each do |article|
+  = link_to article_path(article) do
+.card
+  -# .card_image
+  .card_content
+    .card_title
+      %p Brackets
+    .card_heart
+
+      %span 
+    .card_detail
+      = image_tag 'Oval2.png'
+      %div
