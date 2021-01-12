@@ -1,11 +1,48 @@
-.header {
+@import 'variables';
 
-   &_pageTitle {
-    // position: absolute;
-    margin: 17px 328px 16px 30px;
-    width: 56px;
-    height: 25px;
-    left: 30px;
-    top: 17px;
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $header-padding-y 16px;
+  font-weight: bold;
+  border-bottom: solid #F4F4F4;
+  
+  &_loginBtn {
+    background-color: $base-bg-color;
+    height: $avatar-size;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 12px 16px;
+    color: $primary-color;
+  }
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      cursor: pointer;
+      width: $back-icon-size;
+      height: $back-icon-size;
+      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+    }
+  }
+
+  
+
+  &_pageTitle {
+    color: #000000;
+    line-height: $avatar-size;
+    font-size: $font-lg;
+  }
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
   }
 }
