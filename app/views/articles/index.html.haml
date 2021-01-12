@@ -1,17 +1,8 @@
 .top-title New Board
 
 - @articles.each do |article|
-  = link_to article_path(article) do
-    .card
-      .card_title
-        = article.title
-        .card_content
-          = article.content
-          .card_heart
-            %span 
-          .card_detail
-            = image_tag 'Oval2.png'
-            %div
+  = render 'article', article: article
+  
 .container
   = link_to new_article_path do
     .float_btn

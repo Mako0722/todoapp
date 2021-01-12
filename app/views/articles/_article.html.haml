@@ -1,0 +1,11 @@
+= link_to article_path(article) do
+  .card
+    .card_title
+      = article.title
+      .card_content
+        = article.content
+        .card_heart
+          %span 
+        .card_detail
+          = image_tag 'Oval2.png'
+          %div
