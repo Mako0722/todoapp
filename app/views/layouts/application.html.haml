@@ -12,12 +12,14 @@
     %body
       %header.header
         %p.header_pageTitle BlogApp
-        .dropdown
-          = image_tag 'Oval.svg', class: 'header_avatar dropbtn'
-          .dropdown-content
-            %a{:href => "#"} プロフィール
-            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
-            = link_to 'ログイン', new_user_session_path
+        - if user_signed_in?
+          .dropdown
+            = image_tag 'Oval.svg', class: 'header_avatar dropbtn'
+            .dropdown-content
+              %a{:href => "#"} プロフィール
+              = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+        - else
+          = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
     %p.notice= notice
     %p.alert= alert
     = yield
