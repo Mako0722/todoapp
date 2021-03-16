@@ -1,20 +1,20 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: profiles
 #
 #  id         :bigint           not null, primary key
-#  content    :text             not null
+#  department :integer
+#  nickname   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  task_id    :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_comments_on_task_id  (task_id)
-#  index_comments_on_user_id  (user_id)
+#  index_profiles_on_user_id  (user_id)
 #
-class Comment < ApplicationRecord
-  belongs_to :task
+class Profile < ApplicationRecord
+  enum department: { sales: 0, marketing: 1, production: 2}
   belongs_to :user
+  has_one_attached :avatar
 end

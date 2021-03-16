@@ -4,17 +4,31 @@
 #
 #  id         :bigint           not null, primary key
 #  content    :text             not null
-#  deadline   :date             not null
+#  period     :date             not null
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  article_id :bigint           not null
+#  board_id   :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_tasks_on_article_id  (article_id)
-#  index_tasks_on_user_id     (user_id)
+#  index_tasks_on_board_id  (board_id)
+#  index_tasks_on_user_id   (user_id)
 #
 class Task < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :period, presence: true
+  
+  has_many :comments, dependent: :destroy
+
+  has_one_attached :eyecatch
+
+  belongs_to :user
+  belongs_to :board
+
+  def comment_count
+    comments.count
+  end
 end

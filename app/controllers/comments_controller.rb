@@ -1,23 +1,24 @@
 class CommentsController < ApplicationController
+  
   def new
-    article = Article.find(params[:article_id])
-    @comment = article.comments.build
+    board = Board.find(params[:board_id])
+    task = Task.find(params[:task_id])
+    @comment = task.comments.build
   end
 
   def create
-    article =Article.find(params[:article_id])
-    @comment = article.comments.build(comment_params)
-    @comment.user_id = current_user.id
+    board = Board.find(params[:board_id])
+    task = Task.find(params[:task_id])
+    @comment = task.comments.build(comment_params)
     if @comment.save
-      redirect_to article_path(article), notice: 'コメントを追加'
+      redirect_to board_task_path(board, task), notice: 'コメントを追加'
     else
-      flash.now[:error] ='更新できませんでした'
+      flash.now[:error] = '保存できませんでした'
       render :new
     end
   end
 
-  private
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content).merge(user_id: current_user.id)
   end
 end

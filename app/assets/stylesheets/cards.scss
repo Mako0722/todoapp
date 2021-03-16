@@ -1,0 +1,99 @@
+@import './variables'; 
+
+.card {
+  width: 100%;
+  height: 161px;
+  background: $text-box-color;
+  border-radius: 10px;
+  margin-bottom: 26px;
+
+  h3 {
+    padding-left:17px;
+    padding-top: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  p {
+    height: 19px;
+    padding-left: 17px;
+    padding-top: 6px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    }
+
+    .dropbtn-boards {
+      border: none;
+      width: 24px;
+      height: 6px;
+    }
+
+    .dropdown-boards {
+      position: relative;
+      display: inline-block;
+      left: 350px;
+      top: -120px;
+    }
+    
+    .dropdown-content-boards {
+      position: absolute;
+      padding: 10px 20px 5px 10px;
+      line-height: 25px;
+      right: 0;
+      font-weight: normal;
+      font-size: 12px;
+      display: none;
+      border-radius: 10px;
+      background: #FFFFFF;
+      z-index: 10;
+    }
+    
+    .dropdown-content-boards a {
+      display: block;
+    }
+    
+    .dropdown-boards:hover .dropdown-content-boards {
+      display: block;
+    }
+
+    .board-avatar {
+      width: 30px;
+      height: 30px;
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    // .name {
+    //   font-size: 15px;
+    //   padding-top: 45px;
+    //   padding-left: 60px; 
+    //   display:block
+    // }
+}
+
+.add_card {
+  width: 100%;
+  height: 160px;
+  top: 348px;
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  p {
+    position: relative;
+    height: 25px;
+    left: 0.35%;
+    right: 0.35%;
+    top: calc(50% - 25px/2);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+  }
+  }

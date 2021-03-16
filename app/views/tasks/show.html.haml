@@ -1,18 +1,26 @@
 .container
-  %p.header_text 
-  %hr.article_room
+  %h2.title_show_task= @task.title
+  - if user_signed_in? && current_user.tasks.exists?(id: @task.id)
+    .dropdown-task
+      = image_tag 'menu.png', class: 'dropbtn-task'
+      .dropdown-content-task
+        = link_to 'Edit', edit_board_task_path(@board, @task)
+        = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
 
-  .board_detail
-    %h3.board_title
-      = @task.title
-    %p.board_content
-      = @task.content
+    
+  .card_image
+    - if @task.eyecatch.attached?
+      = image_tag @task.eyecatch, class: 'task_show_image'
+  .task_show_card  
+    %p= @task.content
+    %h4= @task.period
 
-    %p コメント一覧
-    - @comments.each do |comment|
-      %h3.board_title
-        = comment.comment
+  .comment_title Comment
 
-.container
-  = link_to new_task_comment_path(@task)
-  .add_card + Add new comment
+  
+  - @comments.each do |comment|
+    .comments_list
+      = image_tag comment.user.avatar_image, class: 'board-avatar'
+      %p= comment.content
+  .add_card_comment
+    = link_to '+ Add new comment', new_board_task_comment_path(@board, @task)
