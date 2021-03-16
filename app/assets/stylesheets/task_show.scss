@@ -1,0 +1,148 @@
+@import './variables'; 
+
+.task_show_card {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: $text-box-color;
+  border-radius: 10px;
+  margin-bottom: 26px;
+
+  .title_show_task {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  h3 {
+    padding-left:17px;
+    padding-top: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  p {
+    height: 19px;
+    padding-left: 17px;
+    padding-top: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    }
+
+    h4 {
+    height: 19px;
+    padding-left: 17px;
+    padding-top: 150px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 19px;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    }
+}
+.task_show_image{
+  position: relative;
+  top: 0px;
+  left: 2px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.comment_title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 36px;
+  margin-bottom: 25px;
+}
+
+
+// メニューボタン
+
+
+.dropbtn-task {
+  position: relative;
+  border: none;
+  width: 24px;
+  height: 6px;
+}
+
+.dropdown-task {
+  position: relative;
+  display: inline-block;
+  left: 400px;
+  top: -30px;
+}
+
+.dropdown-content-task {
+  position: absolute;
+  padding: 10px 20px 5px 10px;
+  line-height: 25px;
+  right: 0;
+  font-size: 12px;
+  display: none;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content-task a {
+  display: block;
+}
+
+.dropdown-task:hover .dropdown-content-task {
+  display: block;
+}
+
+// NEWコメントカード
+
+.add_card_comment {
+  position: relative;
+  width: 100%;
+  height: 57px;
+  margin-top: 32px;
+  background: #FFFFFF;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  a {
+    position: relative;
+    height: 25px;
+    left: 155px;
+    top: 18px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+// コメント一覧
+.comments_list {
+  display: flex;
+  margin-bottom: 30px;
+
+  .board-avatar{
+    width: 40px;
+    height: 40px;
+  }
+
+p {
+  left: 86px;
+  top: 677px;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 24px;
+}
+}

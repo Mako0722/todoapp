@@ -1,0 +1,19 @@
+.container
+  %h2
+  = form_with(model: @task, local: true) do |f|
+    %div.table_label
+      = f.label :title, 'タイトル'
+    %div
+      = f.text_field :title
+
+    %div.text_field
+      =f.label :content, '内容'
+    %div
+      =f.text_area :content
+
+    %div.table_label
+      = f.label :deadline, '期限'
+    %div
+      = f.text_field :deadline
+
+    = f.submit '保存', class: 'btn btn_primary btn_lg'

@@ -1,23 +1,28 @@
 !!!
 %html
   %head
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title BlogApp
+    %title TodoApp
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
 
-    %body
-      %header.header
-        %p.header_pageTitle BlogApp
-        .dropdown
-          = image_tag 'Oval.svg', class: 'header_avatar dropbtn'
-          .dropdown-content
-            %a{:href => "#"} プロフィール
-            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
-            = link_to 'ログイン', new_user_session_path
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+  %body
+  %header.header
+    %p.pageTitle= link_to 'Boards', root_path
+    - if user_signed_in?
+      .dropdown
+        = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
+        .dropdown-content
+          = link_to 'Profile',profile_path
+          = link_to 'Logout', destroy_user_session_path, data: { method: 'delete' }
+    - else
+      = link_to 'Login', new_user_session_path, class:'header_loginBtn'
+  .line
+  - if flash.present?
+    .flash
+      - flash.each do |key, value|
+        %div{:class => key}= value
+= yield

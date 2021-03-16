@@ -1,0 +1,26 @@
+.container
+  %h2.title_show_task= @task.title
+  - if user_signed_in? && current_user.tasks.exists?(id: @task.id)
+    .dropdown-task
+      = image_tag 'menu.png', class: 'dropbtn-task'
+      .dropdown-content-task
+        = link_to 'Edit', edit_board_task_path(@board, @task)
+        = link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+
+    
+  .card_image
+    - if @task.eyecatch.attached?
+      = image_tag @task.eyecatch, class: 'task_show_image'
+  .task_show_card  
+    %p= @task.content
+    %h4= @task.period
+
+  .comment_title Comment
+
+  
+  - @comments.each do |comment|
+    .comments_list
+      = image_tag comment.user.avatar_image, class: 'board-avatar'
+      %p= comment.content
+  .add_card_comment
+    = link_to '+ Add new comment', new_board_task_comment_path(@board, @task)

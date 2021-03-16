@@ -1,136 +1,39 @@
-input {
+@import './variables';
+input, select {
   &.text {
-  margin: 8px 15px 66px 15px;
-  width: 100%;
-  height: 40px;
-  left: 26px;
-  top: 190px;
-  background: #F4F4F4;
-  border-radius: 10px;
-  border-color: #F4F4F4;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px 24px;
+    border: solid 1px #ccc;
+    box-shadow: none;
+    transition: all 0.5s;
+  }
+  &:focus {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
+    border: solid 1px #666;
   }
 }
 
-label {
-  margin: 8px 15px 66px 15px;
-  width: 49px;
-  height: 25px;
-  left: 26px;
-  top: 157px;
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
+.text2 {
+  margin-top: 8px;
+  margin-bottom: 30px;
 }
 
-textarea {
-  margin: 8px 15px 66px 15px;
+.description {
+  display: block;
   width: 100%;
   height: 203px;
-  left: 26px;
-  top: 296px;
-  background: #F4F4F4;
+  background: $text-box-color;
   border-radius: 10px;
-  border-color: #F4F4F4;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: solid 1px #ccc;
+  box-shadow: none;
+  transition: all 0.5s;
+
+  &:focus {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
+    border: solid 1px #666;
+  }
 }
-
-.top-title {
-  height: 36px;
-  left: 0%;
-  right: 0%;
-  top: calc(50% - 36px/2);
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 26px;
-  line-height: 36px;
-} 
-
-
-
-
-
-
-// input, select {
-//   &.text {
-//     margin:4px 26px 26px 26px;
-//     width: 100%;
-//     height: 40px;
-//     left: 26px;
-//     top: 190px;
-//     background: #F4F4F4;
-//     border-radius: 10px;
-//     border-color: #F4F4F4;
-//   }
-// }
-
-// label {
-//   // width: 44px;
-//   // height: 25px;
-//   // left: 26px;
-//   // top: 161px;
-//   white-space: nowrap;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 18px;
-//   line-height: 30px;
-//   margin: 30px 344px 735px 26px;
-// }
-
-
-
-// textarea {
-//   margin:8px 26px 26px 26px;
-//   width: 100%;
-//   height: 203px;
-//   left: 26px;
-//   top: 296px;
-//   background: #F4F4F4;
-//   border-radius: 10px;
-// }
-
-// h2{
-//   margin: 26px 26px;
-//   font-family: Avenir;
-//   font-style: normal;
-//   font-weight: 800;
-//   font-size: 26px;
-//   line-height: 36px;
-//   color: #000000;
-//   height: 36px;
-//   left: 0%;
-//   right: 49.73%;
-//   top: calc(50% - 36px/2);
-// }
-
-// .btn {
-//   margin:464px 26px 26px 26px;
-//   width: 100%;
-//   height: 40px;
-//   left: 26px;
-//   top: 190px;
-//   background: #F8BD1C;
-//   color: #FFFFFF;
-//   font-family: Avenir;
-//   font-style: normal;
-//   font-weight: 800;
-//   font-size: 18px;
-//   line-height: 25px;
-//   border-color: #F4F4F4;
-// }
-
-// .top-titile {
-//   height: 36px;
-//   width:136px;
-//   left: 0%;
-//   right: 0%;
-//   top: calc(50% - 36px/2);
-//   font-family: Avenir;
-//   font-style: normal;
-//   font-weight: 800;
-//   font-size: 26px;
-//   line-height: 36px;
-//   /* identical to box height */
-//   color: #000000;
-// }

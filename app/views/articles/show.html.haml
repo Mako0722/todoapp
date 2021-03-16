@@ -1,36 +1,27 @@
 .article
-  .dropdown
-    = image_tag 'Combined Shape.svg', class: 'dropbtn'
-    .dropdown-content.mini
-      = link_to '編集する', edit_article_path(@article)
-      = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  %div
+    %p= @article.author_name
+  - if user_signed_in? && current_user.has_written?(@article)
+    .dropdown
+      = image_tag 'Combined Shape.svg', class: 'dropbtn'
+      .dropdown-content.mini
+        = link_to '編集する', edit_article_path(@article)
+        = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   %h1.article_title= @article.title
   .article_content
     = @article.content
   .article_detail
     = image_tag 'Oval2.png'
-  -# .article_heart
-  -#   = image_tag ''
 
 
 
+  -# %h2 コメント一覧
+  -#   .article_comment
+  -#     %p= @article.author_name
+  -#     %p= @comment.content
 
-
--# .article
--# .article_detail
--#   = image_tag ''
--#   %div
--#   .article_detail_actions
-    .dropdown
-      = image_tag 'Combined Shape.svg', class: 'dropbtn'
-      .dropdown-content.mini
-        %a{:href => "#"} 編集する
--# .article_content
--#   -# = @article.content
--# .article_heart
--#   = image_tag ''
--# .container
--#   = link_to new_article_path do
--#     .float_btn 
--#       + Add new borad 
--#       %i.fa.fa-plus
+.container
+- if user_signed_in? && current_user.has_written?(@article)
+  = link_to new_article_comment_path(@article) do
+    .btn-secondary
+      コメントを追加

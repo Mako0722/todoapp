@@ -1,11 +1,16 @@
 @import './variables'; 
+
 .btn-primary {
-  margin: 390px 15px 32px 15px;
-  width: 100%;
-  height: 40px;
-  left: 30px;
-  top: 889px;
-  background: #F8BD1C;
-  border-radius: 4px;
+position: absolute;
+width: 90%;
+height: 40px;
+left: 20px;
+top: 889px;
+margin-bottom: 10px;
+background: #F8BD1C;
+border-radius: 4px;
+font-weight: 800;
+font-size: 18px;
+line-height: 25px;
+color: #FFFFFF;
 }
- 
